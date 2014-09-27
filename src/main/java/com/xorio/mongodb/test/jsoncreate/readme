@@ -1,22 +1,14 @@
 SIMPLE
 
-java:
-
-$("x", 1);
-
 json:
 
 { "x" : 1}
 
-EMBEDDED
-
 java:
 
-$(
-		"x", $(
-				"$ne", 3
-		)
-)
+$("x", 1);
+
+EMBEDDED
 
 json:
 
@@ -26,23 +18,15 @@ json:
    }
 }
 
-EMBEDDED WITH ARRAY
-
 java:
 
 $(
 		"x", $(
-				$("y", $(
-								$("z1", 1),
-								$("z2", 2)
-						)
-				),
-				$arr("array",
-						$("a1", 1),
-						1
-				)
+				"$ne", 3
 		)
 )
+
+EMBEDDED WITH ARRAY
 
 json:
 
@@ -60,3 +44,19 @@ json:
       ]
    }
 }
+
+java:
+
+$(
+		"x", $(
+				$("y", $(
+								$("z1", 1),
+								$("z2", 2)
+						)
+				),
+				$arr("array",
+						$("a1", 1),
+						1
+				)
+		)
+)
